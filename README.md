@@ -13,7 +13,13 @@ MYSQL_USER, MYSQL_PASSWORD : These variables are optional, used in conjunction t
 
 Do note that there is no need to use this mechanism to create the root superuser, that user gets created by default with the password specified by the MYSQL_ROOT_PASSWORD variable.
 
+Build Image locally : 
+```
+cd MySQL-ARMV7-Docker
+docker build . -t debian-mariadb:1.0
+```
+
 Docker CLI example : 
 ```
-	docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_DATABASE=champyresi -e MYSQL_USER=user -e MYSQL_PASSWORD=resu --name dbprod debian-mariadb:1.0
+docker run -d -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_DATABASE=champyresi -e MYSQL_USER=user -e MYSQL_PASSWORD=resu --name dbprod debian-mariadb:1.0
 ```
